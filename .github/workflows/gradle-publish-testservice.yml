@@ -10,8 +10,8 @@ name: Gradle Package
 on:
   push:
    paths-ignore:
-    - "gradle-publish-testservice.yml"
-    - kustomize/**
+    - ".github/workflows/**"
+    - "kustomize/**"
 env:
   tag: ${{ github.sha }}
   dockerimage_name: ${{ secrets.DOCKER_USERNAME }}/testsvc:${{ github.sha }}
