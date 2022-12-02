@@ -50,7 +50,7 @@ jobs:
          docker push ${{ env.dockerimage_name }}
     - name: view manifast
       working-directory: ./kustomize/overlays/testservice/dev
-      run: cat ./kustomize/overlays/testservice/dev/kustomization.yaml
+      run: cat kustomization.yaml
     - name: change yaml for k8s
       working-directory: ./kustomize/overlays/testservice/dev
       run: |
