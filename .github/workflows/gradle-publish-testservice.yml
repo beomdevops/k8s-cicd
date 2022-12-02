@@ -50,18 +50,18 @@ jobs:
          docker push ${{ env.dockerimage_name }}
     - name: change yaml for k8s
       run: |
-            cat <<EOF> kustomize/overlays/dev/kustomization.yaml 
+            cat <<EOF> kustomize/overlays/testservice/dev/kustomization.yaml 
             apiVersion: kustomize.config.k8s.io/v1beta1
             kind: Kustomization
             resources:
-            - ../../base
+            - ../../../base
             images:
               - name: ${{ secrets.DOCKER_USERNAME }}/testsvc
                 newName: ${{ secrets.DOCKER_USERNAME }}/testsvc
                 newTag: ${{ env.tag }}
             EOF
     - name: after change
-      run: cat kustomize/overlays/dev/kustomization.yaml
+      run: cat kustomize/overlays/testservice/dev/kustomization.yaml
     - name: Commit report
       run: |
           git config --global user.name 'beomsun66'
