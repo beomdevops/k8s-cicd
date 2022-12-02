@@ -27,7 +27,7 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
     
     - name: Grant execute permission for gradlew
-      run: chmod +x src/testservicev1/gradlew
+      run: chmod +x gradlew
     - name: bulid
-      run: src/testservicev1/./gradlew build -x test
+      run: ./gradlew build -x test
 
