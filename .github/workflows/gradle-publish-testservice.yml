@@ -12,6 +12,7 @@ on:
    paths-ignore:
     - ".github/workflows/**"
     - "kustomize/**"
+    - "README.md"
 env:
   tag: ${{ github.sha }}
   dockerimage_name: ${{ secrets.DOCKER_USERNAME }}/testsvc:${{ github.sha }}
