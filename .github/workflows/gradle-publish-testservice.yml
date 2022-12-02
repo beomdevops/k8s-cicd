@@ -43,6 +43,6 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
     - name: docker build & push
       run: |
-         docker build -t ${{ env.dockerimage_name }}        
+         docker build -t ${{ env.dockerimage_name }} .   
          docker push ${{ env.dockerimage_name }}
       
