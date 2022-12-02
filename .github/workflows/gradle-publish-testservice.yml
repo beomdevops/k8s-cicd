@@ -11,7 +11,7 @@ on:
   push
 env:
   tag: ${{ github.sha }}
-  dockerimage_name: beomsun22/testsvc:${{ github.sha }}
+  dockerimage_name: ${{ secrets.DOCKER_USERNAME }}/testsvc:${{ github.sha }}
 
 jobs:
   build:
