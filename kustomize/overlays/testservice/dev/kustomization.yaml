@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
 - ../../../base
 images:
-  - name: test-svc
-    newName: test-svc
-    newTag: beomsun22/testsvc:5da053b7d3d70369599f1a2f1b86399488372306
+  - name: beomsun22/testsvc
+    newName: beomsun22/testsvc
+    newTag: c66a3691f290b1f69e85501bc42d7765ac72d82e
