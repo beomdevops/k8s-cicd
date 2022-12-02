@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: test-svc
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: test-svc
+ template:
+   metadata:
+     labels:
+       app: test-svc
+   spec:
+     containers:
+     - name: test-svc
+       image: beomsun22/testsvc:5da053b7d3d70369599f1a2f1b86399488372306
+       ports:
+       - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: test-svc
+spec:
+ ports:
+   - port: 80
+     targetPort: 8080
+     name: http
+ selector:
+   app: test-svc
