@@ -51,6 +51,8 @@ jobs:
     - name: change workdir
       run: |
       working-directory: ./kustomize/overlays/testservice/dev
+    - name: view manifast
+      run: cat kustomization.yaml
     - name: change yaml for k8s
       run: |
             cat <<EOF> kustomization.yaml 
@@ -69,5 +71,5 @@ jobs:
       run: |
           git config --global user.name 'beomsun66'
           git config --global user.email 'beomsun66@google.com'
-          git commit -am "relese/env.tag"
+          git commit -am "relese/${{ env.tag }}"
           git push
